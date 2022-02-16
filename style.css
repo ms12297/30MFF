@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Roboto+Serif:ital@1&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Roboto:wght@300&display=swap');
+
+*{ /*universal selector*/
+	list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background: white;
+}
+
+.sidebar{
+    background: #4d0099; /*colors picked from hex value generator*/
+    /*defining sidebar dimensions*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 225px;
+    height: 100%;
+    padding: 20px 0;
+    /*to control speed at which bar shows up*/
+    transition: all 0.5s ease;
+}
+
+.sidebar ul li a{
+    display: block;
+    padding: 13px 30px;
+    border-bottom: 1px solid #4d0099;
+    color: white;
+    font-size: 20px;
+    position: relative;
+}
+
+.sidebar .icon{
+    color: #dee4ec;
+    width: 30px;
+    display: inline-block;
+}
+
+
+.sidebar ul li a:hover{ /*if hover over ul, li, or a tags specifically*/
+    color: #4d0099;
+    background:white;
+    border-right: 2px solid rgb(5, 68, 104);
+}
+
+.sidebar ul li a:hover .icon{
+    color: #4d0099;
+}
+
+.header{ /*defining dimensions for page with the sidebar toggled on inititally*/
+	position: fixed;
+	top: 0;
+    margin-left: 225px;
+    font-size: 22px;
+    /*adding transition to synch with sidebar*/
+    transition: all 0.5s ease;
+    width: calc(100% - 225px); /*to keep width fixed regardless of siderbar toggle*/
+}
+
+.footer{ /*defining dimensions for page with the sidebar toggled on inititally*/
+	display:  flex;
+	justify-content: right;
+	position: fixed;
+	bottom: 0;
+	padding: 5px;
+	font-size: 30px;
+    margin-left: 225px;
+    /*adding transition to synch with sidebar*/
+    transition: all 0.5s ease;
+    background-color: #8000ff;
+    width: calc(100% - 225px); /*to keep width fixed regardless of siderbar toggle*/
+}
+
+.footer a{
+	color: #f4fbff;
+	margin-right: 15px;
+	padding:  5px;
+}
+
+.navbar{
+	/*defining dimensions for header bar*/
+    background: #8000ff;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.title{
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	color:  white;
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.title h2, i{ /*different font for title*/
+	font-family: 'Roboto Serif', sans-serif;
+}
+
+.bars a{ 
+    color: #f4fbff;
+}
+
+.bars a:hover, .footer a:hover{ /*if hovering over the bar icon*/
+    color: #d9b3ff;
+}
+
+.main{
+	display:  flex;
+	/*column and flex:1 to make every section fit into a column*/
+	flex-direction: column;
+	flex:  1;
+	align-items: center;
+	font-size: 25px;
+	margin-top: 80px;
+	margin-left: 225px;
+    /*adding transition to synch with sidebar*/
+    transition: all 0.5s ease;
+    width: calc(100% - 225px); /*to keep width fixed regardless of siderbar toggle*/
+}
+
+.section{
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	margin: 20px;
+	filter:  drop-shadow(2px 2px 4px #888888);
+	background-color: aliceblue;
+	width: 80%;
+	justify-content: center;
+}
+
+.content{
+	display: flex;
+}
+
+.section iframe{
+	flex: 2;
+	margin:  30px;
+	align-self: center;
+	filter:  drop-shadow(4px 4px 8px #888888);
+}
+
+.section h3, b{
+
+	padding-top: 30px;
+	padding-bottom: 10px;
+	color:  #004d4d;
+	font-family: 'Roboto Serif', sans-serif;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+
+}
+
+.section h5{
+	flex: 1;
+	font-size: 1.4rem;
+	color:  #004d4d;
+	margin-top: 30px;
+	margin-left: 40px;
+	margin-bottom: 50px;
+	min-width: 400px;
+	max-width: 900px;
+}
+
+.section:hover{
+	background-color: #ffffe6;
+}
+
+#synopdesc {
+	padding-bottom: : -20px;
+	text-align: center;
+	justify-content: center;
+}
+
+
+.cast{
+	display: flex;
+	margin: 20px;
+}
+.person{
+	flex: 1;
+}
+
+.person .cont{
+	text-align: center;
+	font-family: 'Roboto', serif;
+	color: #004d4d;
+	padding: 10px;
+	font-weight: 600;
+}
+
+.person div{
+	text-align: center;
+	font-family: 'Roboto Serif', serif;
+	color: #004d4d;
+	padding: 10px;
+	font-weight: 600;
+}
+
+.person img{
+	display: block;
+	width: 300px;
+	height: 300px;
+	border-radius: 10%;
+	margin:  0 auto;
+}
+
+
+.space{
+	padding-bottom: 60px;
+}
+
+body.active .sidebar{ /*if sidebar is active*/
+    left: -225px;
+}
+
+body.active .header, body.active .footer, body.active .main{ /*if sidebar is not active*/
+    margin-left: 0;
+    width: 100%;
+}
